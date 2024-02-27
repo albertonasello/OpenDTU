@@ -33,13 +33,13 @@ export default defineComponent({
     },
     methods: {
         getHistoryUrl() {
-            // this.dataLoading = true;
-            // fetch("/api/history-url", { headers: authHeader() })
-            //     .then((response) => handleResponse(response, this.$emitter, this.$router))
-            //     .then((data) => {
-            //         this.ntpDataList = data;
-            //         this.dataLoading = false;
-            //     });
+            this.dataLoading = true;
+            fetch("/api/production-history/url", { headers: authHeader() })
+                .then((response) => handleResponse(response, this.$emitter, this.$router))
+                .then((data) => {
+                    this.url = data;
+                    this.dataLoading = false;
+                });
         },
     },
 });
