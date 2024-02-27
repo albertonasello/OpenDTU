@@ -15,6 +15,8 @@
 #define NTP_MAX_TIMEZONE_STRLEN 50
 #define NTP_MAX_TIMEZONEDESCR_STRLEN 50
 
+#define PRODUCTION_HISTORY_MAX_URL_STRLEN 256
+
 #define MQTT_MAX_HOSTNAME_STRLEN 128
 #define MQTT_MAX_USERNAME_STRLEN 64
 #define MQTT_MAX_PASSWORD_STRLEN 64
@@ -137,6 +139,10 @@ struct CONFIG_T {
         char Password[WIFI_MAX_PASSWORD_STRLEN + 1];
         bool AllowReadonly;
     } Security;
+
+    struct {
+        char Url[PRODUCTION_HISTORY_MAX_URL_STRLEN + 1];
+    } ProductionHistory;
 
     struct {
         bool PowerSafe;
