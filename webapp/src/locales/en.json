@@ -1,5 +1,6 @@
 {
     "menu": {
+        "Dashboard": "Dashboard",
         "LiveView": "Live View",
         "Settings": "Settings",
         "NetworkSettings": "Network Settings",
@@ -321,6 +322,11 @@
         "String": "String {num}",
         "Phase": "Phase {num}",
         "General": "General"
+    },
+    "inverterhistoryinfo": {
+      "TotalYieldDay": "Yield of",
+      "ChooseHistoryDay": "Choose an history day",
+      "NoData": "No data for this day"
     },
     "invertertotalinfo": {
         "TotalYieldTotal": "Total Yield Total",

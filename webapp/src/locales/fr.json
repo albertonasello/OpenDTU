@@ -1,5 +1,6 @@
 {
     "menu": {
+        "Dashboard": "Tableau de bord",
         "LiveView": "Direct",
         "Settings": "Paramètres",
         "NetworkSettings": "Réseau",
@@ -322,6 +323,11 @@
         "Phase": "Phase {num}",
         "General": "General"
     },
+    "inverterhistoryinfo": {
+      "TotalYieldDay": "Rendement du : ",
+      "ChooseHistoryDay": "Choisir un jour d'historique",
+      "NoData": "Aucune donnée pour ce jour"
+  },
     "invertertotalinfo": {
         "TotalYieldTotal": "Rendement total",
         "TotalYieldDay": "Rendement du jour",

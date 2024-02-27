@@ -2,6 +2,7 @@
     <BasePage :title="$t('home.LiveData')" :isLoading="dataLoading" :isWideScreen="true" :showWebSocket="true" :isWebsocketConnected="isWebsocketConnected" @reload="reloadData">
         <HintView :hints="liveData.hints" />
         <InverterTotalInfo :totalData="liveData.total" /><br />
+        <InverterHistoryInfo :totalData="liveData.total" :yield-histories="yieldHistory || []" /><br />
         <div class="row gy-3">
             <div class="col-sm-3 col-md-2" :style="[inverterData.length == 1 ? { 'display': 'none' } : {}]">
                 <div class="nav nav-pills row-cols-sm-1" id="v-pills-tab" role="tablist" aria-orientation="vertical">
@@ -285,30 +286,33 @@ import {
     BIconXCircleFill
 } from 'bootstrap-icons-vue';
 import { defineComponent } from 'vue';
+import InverterHistoryInfo from '@/components/InverterHistoryInfo.vue';
+import type { YieldHistory } from '@/types/YieldHistory';
 
 export default defineComponent({
     components: {
-        BasePage,
-        BootstrapAlert,
-        DevInfo,
-        EventLog,
-        GridProfile,
-        HintView,
-        InverterChannelInfo,
-        InverterTotalInfo,
-        ModalDialog,
-        BIconArrowCounterclockwise,
-        BIconCheckCircleFill,
-        BIconCpu,
-        BIconExclamationCircleFill,
-        BIconJournalText,
-        BIconOutlet,
-        BIconPower,
-        BIconSpeedometer,
-        BIconToggleOff,
-        BIconToggleOn,
-        BIconXCircleFill,
-    },
+    BasePage,
+    BootstrapAlert,
+    DevInfo,
+    EventLog,
+    GridProfile,
+    HintView,
+    InverterChannelInfo,
+    InverterTotalInfo,
+    ModalDialog,
+    BIconArrowCounterclockwise,
+    BIconCheckCircleFill,
+    BIconCpu,
+    BIconExclamationCircleFill,
+    BIconJournalText,
+    BIconOutlet,
+    BIconPower,
+    BIconSpeedometer,
+    BIconToggleOff,
+    BIconToggleOn,
+    BIconXCircleFill,
+    InverterHistoryInfo
+},
     data() {
         return {
             isLogged: this.isLoggedIn(),
@@ -329,6 +333,7 @@ export default defineComponent({
             gridProfileList: {} as GridProfileStatus,
             gridProfileRawList: {} as GridProfileRawdata,
             gridProfileLoading: true,
+            yieldHistory: {} as YieldHistory[],
 
             limitSettingView: {} as bootstrap.Modal,
             limitSettingLoading: true,
@@ -373,6 +378,7 @@ export default defineComponent({
         this.gridProfileView = new bootstrap.Modal('#gridProfileView');
         this.limitSettingView = new bootstrap.Modal('#limitSettingView');
         this.powerSettingView = new bootstrap.Modal('#powerSettingView');
+        this.getHistoryList();
     },
     unmounted() {
         this.closeSocket();
@@ -417,6 +423,14 @@ export default defineComponent({
     },
     methods: {
         isLoggedIn,
+        getHistoryList() {
+          // TODO URL FROM C++ API
+          fetch("http://192.168.1.48:3000/production/history")
+              .then((response) => response.json())
+              .then((data) => {
+                  this.yieldHistory = data;
+          });
+        },
         getInitialData(triggerLoading: boolean = true) {
             if (triggerLoading) {
                 this.dataLoading = true;

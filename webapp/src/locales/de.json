@@ -1,5 +1,6 @@
 {
     "menu": {
+        "Dashboard": "Armaturenbrett",
         "LiveView": "Live-Ansicht",
         "Settings": "Einstellungen",
         "NetworkSettings": "Netzwerk",
@@ -321,6 +322,11 @@
         "String": "String {num}",
         "Phase": "Phase {num}",
         "General": "Allgemein"
+    },
+    "inverterhistoryinfo": {
+        "TotalYieldDay": "Ertrag vom",
+        "ChooseHistoryDay": "Wähle einen historischen Tag",
+        "NoData": "Keine Daten für diesen Tag."
     },
     "invertertotalinfo": {
         "TotalYieldTotal": "Gesamtertrag Insgesamt",
