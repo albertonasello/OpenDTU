@@ -10,6 +10,7 @@
         "SecuritySettings": "Security Settings",
         "DTUSettings": "DTU Settings",
         "DeviceManager": "Device-Manager",
+        "ProductionHistory": "Production history",
         "ConfigManagement": "Config Management",
         "FirmwareUpgrade": "Firmware Upgrade",
         "DeviceReboot": "Device Reboot",
@@ -381,6 +382,10 @@
         "Low": "Low ({db} dBm)",
         "High": "High ({db} dBm)",
         "Max": "Maximum ({db} dBm)"
+    },
+    "productionhistoryadmin": {
+      "urlConfiguration": "Configuration of the fetching URL for the history",
+      "fetchingUrl": "Fetching URL"
     },
     "securityadmin": {
         "SecuritySettings": "Security Settings",

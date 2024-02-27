@@ -10,6 +10,7 @@
         "SecuritySettings": "Sécurité",
         "DTUSettings": "DTU",
         "DeviceManager": "Périphériques",
+        "ProductionHistory": "Historique de production",
         "ConfigManagement": "Gestion de la configuration",
         "FirmwareUpgrade": "Mise à jour du firmware",
         "DeviceReboot": "Redémarrage de l'appareil",
@@ -381,6 +382,10 @@
         "Low": "Bas ({db} dBm)",
         "High": "Haut ({db} dBm)",
         "Max": "Maximum ({db} dBm)"
+    },
+    "productionhistoryadmin": {
+      "urlConfiguration": "Configuration de l'url de récupération de l'historique",
+      "fetchingUrl": "URL de récupération"
     },
     "securityadmin": {
         "SecuritySettings": "Paramètres de sécurité",

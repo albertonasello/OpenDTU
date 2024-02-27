@@ -14,6 +14,7 @@ import NetworkAdminView from '@/views/NetworkAdminView.vue';
 import NetworkInfoView from '@/views/NetworkInfoView.vue';
 import NtpAdminView from '@/views/NtpAdminView.vue';
 import NtpInfoView from '@/views/NtpInfoView.vue';
+import ProductionHistoryView from '@/views/ProductionHistoryView.vue';
 import SecurityAdminView from '@/views/SecurityAdminView.vue';
 import SystemInfoView from '@/views/SystemInfoView.vue';
 import { createRouter, createWebHistory } from 'vue-router';
@@ -61,6 +62,11 @@ const router = createRouter({
         path: '/info/console',
         name: 'Web Console',
         component: ConsoleInfoView
+    },
+    {
+      path: '/settings/production-history',
+      name: 'Production history',
+      component: ProductionHistoryView
     },
     {
         path: '/settings/network',
