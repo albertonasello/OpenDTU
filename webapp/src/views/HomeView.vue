@@ -431,7 +431,7 @@ export default defineComponent({
         isLoggedIn,
         getHistoryList() {
           // TODO URL FROM C++ API
-          fetch("http://192.168.1.48:3000/production/history")
+          fetch("http://192.168.0.226:3000/production/history")
               .then((response) => response.json())
               .then((data) => {
                   this.yieldHistory = data;
